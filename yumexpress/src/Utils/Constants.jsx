@@ -1,0 +1,1 @@
+export const bg = "https://img.freepik.com/premium-photo/plate-food-with-bowl-vegetables-bowl-broccoli_865967-41862.jpg"
