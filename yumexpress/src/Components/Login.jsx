@@ -40,6 +40,7 @@ const Login = () => {
 
   const handleForm = () => {
       setIsLogin(!isLogin)
+      setIsError("")
   }
 
   return (
