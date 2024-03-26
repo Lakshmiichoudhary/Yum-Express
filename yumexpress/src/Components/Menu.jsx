@@ -9,6 +9,8 @@ const Menu = () => {
   const [searchText, setSearchText] = useState('');
   const [filtredRes, setFiltredRes] = useState([]);
 
+  console.log(restaurantData)
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -17,7 +19,7 @@ const Menu = () => {
     try {
       const response = await fetch(cusinesApi);
       const json = await response.json();
-      console.log(json);
+      console.log(json)
       const data = json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setRestaurantData(data);
       setFiltredRes(data);
@@ -31,10 +33,11 @@ const Menu = () => {
       res.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
     setFiltredRes(filteredResto);
+    setSearchText("")
   };
 
   return (
-    <div className='mt-20 absolute lg:w-screen'>
+    <div className='mt-24 absolute lg:w-screen'>
       <div className='rounded-full lg:ml-44 p-2 flex overflow-x-auto md:overflow-x-visible'>
         {cusines.map((item) => (
           <img className='p-2 lg:w-44 lg:h-44 w-32 h-32 rounded-full' key={item.id} src={item.img} />

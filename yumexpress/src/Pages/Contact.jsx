@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <p className="mb-4 font-bold mt-7 text-3xl text-center">
+      <p className="mb-4 font-bold mt-7 lg:text-3xl text-center">
         We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us using the contact information below.
       </p>
       <div className="flex flex-wrap mt-7 mx-16">

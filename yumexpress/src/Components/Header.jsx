@@ -11,6 +11,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const store = useSelector(store => store.user)
+  const cart = useSelector((state) => state.cart.item)
 
   const handleSignout = () => {
     signOut(auth).then(() => {
@@ -48,21 +49,22 @@ const Header = () => {
         </button>
       </div>}
       {store && <div className='lg:p-2 text-white font-bold mt-2 mb-2 lg:mr-20 md:mr-10 '>
-        <Link to="/home" className='p-3 text-orange-700'>
+        <Link to="/home" className='p-3 text-orange-700 hover:text-orange-500'>
           Home
         </Link>
-        <Link to="/about" className='p-3'>
+        <Link to="/about" className='p-3 hover:text-slate-950'>
           About
         </Link>
-        <Link to="/contact" className='p-3'>
+        <Link to="/contact" className='p-3 hover:text-slate-950'>
           Contact
         </Link>
-        <Link to="/cart" className='p-3'>
-          <ShoppingCartIcon />
+        <Link to="/cart" className='p-3 hover:text-slate-950'>
+          <ShoppingCartIcon /> ({cart.length})
         </Link>
-        <Link to="/" className='p-3' onClick={handleSignout}>
+        <button to="/" className='lg:p-2 lg:bg-orange-700 lg:ml-4 rounded-lg' 
+        onClick={handleSignout}>
           Logout
-        </Link>
+        </button>
       </div>}
     </div>
   )

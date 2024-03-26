@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">About Our Restaurant</h1>
+      <h1 className="lg:text-3xl font-bold mb-4">About Our Restaurant</h1>
       <p className="mb-4 font-bold text-3xl text-center mt-7">
         Welcome to our restaurant! We are passionate about serving delicious food and providing a memorable dining experience for our guests.
       </p>

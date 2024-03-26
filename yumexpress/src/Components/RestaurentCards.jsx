@@ -1,7 +1,14 @@
 import React from 'react';
 import { imagUrl } from '../Utils/Constants';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../Store/CartSlice';
 
 const RestaurentCards = ({ name, avgRatingString, costForTwo, cloudinaryImageId }) => {
+  const dispatch = useDispatch()
+
+  const handleCart = () => {
+    dispatch(addItem({ name, cloudinaryImageId, costForTwo }))
+  }
   
     return (
       <div className="p-3 lg:ml-16 ml-12 rounded-lg shadow-xl from-black mt-4">
@@ -12,7 +19,8 @@ const RestaurentCards = ({ name, avgRatingString, costForTwo, cloudinaryImageId 
           <h2 className='font-bold w-56'>{name}</h2>
           <p>Rating: {avgRatingString}</p>
           <p>Cost for two: {costForTwo}</p>
-          <button className='p-2 mt-2 rounded-lg bg-emerald-800 text-white'>
+          <button className='p-2 mt-2 rounded-lg bg-emerald-800 text-white' 
+          onClick={handleCart}>
             +Add
           </button>
         </div>

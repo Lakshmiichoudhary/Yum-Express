@@ -10,6 +10,7 @@ import Menu from './Components/Menu.jsx'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import ErrorPage from './Pages/ErrorPage.jsx'
+import Cart from './Pages/Cart.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
       path: "/about",
       element : <About />
       },
+      {
+        path: "/cart",
+        element : <Cart />
+        },
       {
         path: "/contact",
         element : <Contact />
